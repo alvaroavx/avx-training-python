@@ -1,0 +1,53 @@
+# CONDICIONALES: IF ELSE VS TERNARIO
+n = 4 → “par”; n = 7 → “impar”.
+monto = 1000, exento = "s" → Total = 1000.00.
+monto = 1000, exento = "n" → Total = 1190.00.
+nota = 3.9 → “Reprobado”; nota = 6.0 → “Aprobado”.
+
+# COMBINAR CONDICIONALES
+Casos de prueba (para que el grupo pruebe rápido)
+Usuario: admin, Clave: 1234 → acceso permitido
+Usuario: soporte, Clave: 0000 → denegado (falla clave)
+Texto: "A" → inválido (largo < 2)
+Texto: "A1" → inválido (no solo letras)
+Texto: "Ana María" → OK
+
+# WHILE
+10, 20, -5, enter → total 25.00
+abc, enter → “no numérico” y total 0.00
+enter inmediato → total 0.00
+
+# TRY EXCEPT
+Validar ingreso numérico con reintento
+while True:
+    s = input("Edad (enter para cancelar): ").strip()
+    if s == "": break
+    try:
+        edad = int(s)
+    except ValueError:
+        print("⚠️ Ingresa un entero válido."); continue
+    print(f"En 5 años: {edad + 5}")
+
+Chequear vacío antes de convertir
+s = input("Precio: ").strip()
+if s == "":
+    print("Sin datos")
+else:
+    try:
+        p = float(s)
+        print(f"Total: {p*1.19:.2f}")
+    except ValueError:
+        print("⚠️ No numérico")
+
+# FOR
+"Hola" → 2 vocales.
+"ÁRBOL" → 2 vocales (si usas .lower() y vocales acentuadas).
+"Python 3.12" → 1 vocal (o).
+Lista [" ana","Beto "," cAmI "] → imprimir con .strip().title() dentro del for.
+
+# FOR RANGE
+list(range(5))         # [0, 1, 2, 3, 4]
+list(range(1, 1))      # []
+list(range(1, 5))      # [1, 2, 3, 4]  (5 no se incluye)
+list(range(5, 0, -2))  # [5, 3, 1]
+# range(1, 5, 0)       # ValueError: step must not be zero

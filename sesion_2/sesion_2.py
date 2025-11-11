@@ -1,12 +1,9 @@
 # TRY EXCEPT
-def leer_float(mensaje: str) -> float | None:
-    """Lee un float o devuelve None si el valor no es válido."""
-    txt = input(mensaje).strip()
-    try:
-        return float(txt)
-    except ValueError:
-        print("Dato no numérico.")
-        return None
+try:
+    txt = input("ingrese un numero:")
+    numero = int(txt)
+except ValueError:
+    print("Dato no numérico.")
 
 # 1) Reintento hasta valor válido o enter para salir
 while True:
@@ -37,22 +34,20 @@ finally:
 
 
 # IF ELSE
-edad_txt = input("Edad: ").strip()
-
-if not edad_txt:
-    print("Sin datos")
-elif not edad_txt.isdigit():
-    print("No numérico")
+edad_texto = input("Edad: ").strip()
+if edad_texto.isdigit():
+	print("Es un numero")
+	edad = int(edad_texto)
+	if edad <= 0:
+		print("edad invalida")
+	elif edad < 18:
+		print("menor de edad")
+	elif edad < 65:
+		print("adulto")
+	else:
+		print("mayor de edad")
 else:
-    edad = int(edad_txt)
-    if edad < 0:
-        print("Edad inválida")
-    elif edad < 18:
-        print("Menor de edad")
-    elif edad < 65:
-            print("Eres adulto.")
-    else:
-        print("Mayor de edad")
+	print("No es un numero")
 
 
 
@@ -90,6 +85,14 @@ else:
 
 
 # COMBINAR CONDICIONES
+usuario = input("Usuario: ").strip().lower()
+clave = input("Clave: ").strip()
+if(usuario == "admin" or usuario == "soporte") and clave == "1234":
+	print("Acceso permitido")
+else:
+	print("Acceso denegado")
+
+
 s = input("Texto (2–20 chars, no solo espacios): ")
 
 valido_largo = len(s.strip()) >= 2 and len(s) <= 20
@@ -136,6 +139,19 @@ L("A") or L("B")         # imprime A y NO evalúa B
 F("A") or L("B")         # imprime A y B
 
 # WHILE
+dato = input("Ingrese algo (enter para terminar):")
+while dato != "":
+	print("Recibi: " + dato)
+	dato = input("Ingrese algo (enter para terminar):")
+print("FIN")
+
+while True:
+	dato = input("Ingrese algo (enter para terminar):")
+	if dato == "":
+		break
+	print("Recibi: " + dato)
+print("FIN")
+
 total = 0.0
 while True:
     s = input("Número (enter para terminar): ").strip()
@@ -163,6 +179,13 @@ print("Fin del programa.")
 
 
 # FOR
+for letra in "hola":
+	print(letra)
+	
+frutas = ["manzana", "platano", "naranja"]
+for fruta in frutas:
+	print(f"- {fruta.upper()}")
+     
 frutas = ["manzana", "pera", "uva"]
 for f in frutas:
     print(f"- {f.title()}")

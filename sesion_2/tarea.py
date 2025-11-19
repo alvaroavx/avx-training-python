@@ -76,7 +76,7 @@ while True:
                 pos = int(input("Número de tarea a eliminar: ")) - 1
                 if 0 <= pos < len(tareas):
                     eliminada = tareas.pop(pos)
-                    print(f"🗑️ Se eliminó: {eliminada}")
+                    print(f"Se eliminó: {eliminada}")
                 else:
                     print("Número fuera de rango.")
             except ValueError:

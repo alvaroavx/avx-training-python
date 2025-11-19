@@ -4,8 +4,8 @@
 tareas = ["limpiar", "comer"]
 tareas.append("dormir")
 tareas.remove("comer")
-print(tareas[:2])          # slicing
-print(sorted([3,1,2]))     # [1,2,3] (no modifica la original)
+print(tareas[:2]) # slicing
+print(sorted([3,1,2])) # [1,2,3] (no modifica la original)
 
 
 # ====== #
@@ -27,6 +27,19 @@ for k, v in precios.items():
     print(k, v)
 precios.setdefault("C", 1500)  # solo si no existe
 
+persona = {
+    "nombre": "Ana",
+    "edad": 28,
+    "ciudad": "Rengo"
+}
+for clave in persona.keys():
+	print(clave)
+for valor in persona.values():
+	print(valor)
+for clave, valor in persona.items():
+	print(f"{clave.title()}: {valor}")
+del persona["edad"]
+ciudad = persona.pop("ciudad")
 
 # ====== #
 # SET #
